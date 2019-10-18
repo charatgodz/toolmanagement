@@ -5,8 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoanComponent } from './loan/loan.component';
 import { TopbarComponent } from './topbar/topbar.component';
-import { CheckOutComponent } from './loan/check-out/check-out.component';
-import { CheckInComponent } from './loan/check-in/check-in.component';
+import { CheckOutComponent } from './check-out/check-out.component';
+import { CheckInComponent } from './check-in/check-in.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
