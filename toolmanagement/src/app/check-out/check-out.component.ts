@@ -8,23 +8,20 @@ import { FormGroup, FormControl } from '@angular/forms'
 })
 export class CheckOutComponent implements OnInit {
 
+  model ={
+    batch: '',
+    aircraft: '',
+    engineer_id: '',
+    engineer_name: ''
+  }
+
   constructor() { }
 
   ngOnInit() {
   }
 
-  form: FormGroup = new FormGroup({
-    eng_id : new FormControl(),
-    ac : new FormControl(),
-    batch : new FormControl()
-  });
-
-  onSubmit(){
-    console.log(this.form.value);
-  }
-
-  onEnter(){
-    console.log("onEnter Working");
+  public batchEnter(){
+    console.log(this.model)
   }
 
 }

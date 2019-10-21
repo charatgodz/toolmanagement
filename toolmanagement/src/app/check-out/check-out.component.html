@@ -12,22 +12,23 @@
 
 
             <div class="modal-body">
-                <form class="bg-light text-dark" (submit)="onSubmit()" [formGroup]="form">
+
+                <form class="bg-light text-dark">
                     <div class="row">
                         <div class="col-6">
                             <label for="engineer">Engineer ID</label>
-                            <input type="text" formControlName="eng_id" class="form-control" id="engineer" placeholder="Engineer ID">
+                            <input type="text" name="engineer_id" class="form-control" id="engineer" placeholder="Engineer ID" [(ngModel)]="model.engineer_id">
                         </div>
                         <div class="col-6">
                             <label for="engineername">Engineer Name</label>
-                            <input type="text" readonly class="form-control-plaintext" id="engineername" value="Engineer Name">
+                            <input type="text" name="engineer_name" readonly class="form-control-plaintext" id="engineername" value="Engineer Name" [(ngModel)]="model.engineer_name">
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col-6">
                             <label for="exampleFormControlSelect1">Aircraft</label>
-                            <select class="form-control" id="exampleFormControlSelect1" formControlName="ac">
+                            <select class="form-control" id="exampleFormControlSelect1" name="aircraft" [(ngModel)]="model.aircraft">
                                 <option>--Please select Aircraft--</option>
                                 <option>Daily Service</option>
                                 <option>HS-LTP</option>
@@ -39,7 +40,7 @@
                         </div>
                         <div class="col-6">
                             <label for="batch">Batch Number</label>
-                            <input type="text" formControlName="batch" class="form-control" id="engineer" placeholder="Engineer ID">
+                            <input type="text" name="batch" class="form-control" id="engineer" placeholder="Engineer ID" [(ngModel)]="model.batch" (keyup.enter)="batchEnter()">
                         </div>
                     </div>
                     <br>
@@ -47,36 +48,8 @@
                 </form>
 
                 <h5>Tool Detail</h5>
-                <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Batch</th>
-                            <th scope="col-2">Description</th>
-                            <th scope="col">Part Number</th>
-                            <th scope="col">Serial Number</th>
-                            <th scope="col">Bin</th>
-                            <th scope="col">Qty</th>
-                            <th scope="col">Aircraft</th>
-                            <th scope="col">Engineer</th>
-                            <th scope="col">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>17606</td>
-                            <td>FLUID SERVICING UNIT, CAPACITY 2 GALLON, MAX. PRESS. 200 PSI</td>
-                            <td>06-5022-6500</td>
-                            <td>AD12950310</td>
-                            <td>TOOLF1</td>
-                            <td>1</td>
-                            <td>HS-LTO</td>
-                            <td>TL130032</td>
-                            <td><a href="">Delete</a></td>
-                        </tr>
-                    </tbody>
-                </table>
+
+                <check-out-detail></check-out-detail>
 
             </div>
 

@@ -8,6 +8,7 @@ import { TopbarComponent } from './topbar/topbar.component';
 import { CheckOutComponent } from './check-out/check-out.component';
 import { CheckInComponent } from './check-in/check-in.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CheckOutDetailComponent } from './check-out-detail/check-out-detail.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     TopbarComponent,
     CheckOutComponent,
     CheckInComponent,
+    CheckOutDetailComponent,
     
   ],
   imports: [
