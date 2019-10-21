@@ -14,16 +14,16 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
+        <tr *ngFor="let item of cartItem">
             <th scope="row">1</th>
-            <td>17606</td>
-            <td>FLUID SERVICING UNIT, CAPACITY 2 GALLON, MAX. PRESS. 200 PSI</td>
-            <td>06-5022-6500</td>
-            <td>AD12950310</td>
-            <td>TOOLF1</td>
-            <td>1</td>
-            <td>HS-LTO</td>
-            <td>TL130032</td>
+            <td>{{item.batch}}</td>
+            <td>{{item.pn_description}}</td>
+            <td>{{item.pn}}</td>
+            <td>{{item.sn}}</td>
+            <td>{{item.bin}}</td>
+            <td>{{item.qty}}</td>
+            <td>{{item.aircraft}}</td>
+            <td>{{item.engineer_id}}</td>
             <td><a href="">Delete</a></td>
         </tr>
     </tbody>
