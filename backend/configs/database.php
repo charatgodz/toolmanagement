@@ -2,7 +2,7 @@
 $host       = '127.0.0.1';
 $user       = 'root';
 $password   = '1234';
-$dbname     = 'php_ang7_db';
+$dbname     = 'tool_db';
 $database   = mysqli_connect($host, $user, $password, $dbname);
 
 if(!$database)

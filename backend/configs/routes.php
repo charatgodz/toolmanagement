@@ -1,4 +1,4 @@
 <?php
 
-$routes['/api/member']['GET'] = './member/get.php';
-$routes['/api/member']['POST'] = './member/post.php';
+$routes['/api/cart']['GET'] = './cart/get.php';
+$routes['/api/cart']['POST'] = './cart/post.php';
