@@ -1,3 +1,4 @@
+import { CartService, cartMember } from './../service/cart.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms'
 
@@ -8,20 +9,29 @@ import { FormGroup, FormControl } from '@angular/forms'
 })
 export class CheckOutComponent implements OnInit {
 
-  model ={
+  model: cartMember ={
     batch: '',
     aircraft: '',
     engineer_id: '',
     engineer_name: ''
   }
 
-  constructor() { }
+  constructor(private carrtService : CartService) { }
 
   ngOnInit() {
   }
 
   public batchEnter(){
-    console.log(this.model)
+    this.carrtService
+    .postItem(this.model)
+    .subscribe(
+      result => {
+        console.log(result);
+      },
+      excep =>{
+        console.log(excep);
+      }
+    );
   }
 
 }

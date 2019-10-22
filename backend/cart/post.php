@@ -3,26 +3,26 @@
 $data = json_decode(file_get_contents('php://input'));
 
 # ตรวจสอบ Validation
-if(isset($data->mem_name) && isset($data->mem_email) && isset($data->mem_address) && isset($data->mem_phone)) 
+if(isset($data->batch) && isset($data->aircraft) && isset($data->engineer_id)) 
 {
     # ตรวจสอบค่าว่าง
-    if(empty($data->mem_name)) 
+    if(empty($data->batch)) 
     {
         http_response_code(400);
-        exit(json_encode(['message' => 'mem_name is required']));
+        exit(json_encode(['message' => 'batch is required']));
     }
-    elseif(empty($data->mem_email)) 
+    elseif(empty($data->aircraft)) 
     {
         http_response_code(400);
-        exit(json_encode(['message' => 'mem_email is required']));
+        exit(json_encode(['message' => 'aircraft is required']));
     }
-    elseif(empty($data->mem_phone)) 
+    elseif(empty($data->engineer_id)) 
     {
         http_response_code(400);
-        exit(json_encode(['message' => 'mem_phone is required']));
+        exit(json_encode(['message' => 'engineer_id is required']));
     }
 
-    $query  = 'INSERT INTO members(mem_name, mem_email, mem_address, mem_phone) VALUES(?, ?, ?, ?)';
+    $query  = 'INSERT INTO cart_tb(batch, pn_description, pn, sn, qty, bin, aircraft, engineer_id) VALUES(?, ?, ?, ?)';
     $stmt   = mysqli_prepare($database, $query);
     mysqli_stmt_bind_param($stmt, 'ssss', 
         $data->mem_name,

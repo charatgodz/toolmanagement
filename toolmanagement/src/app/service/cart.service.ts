@@ -11,19 +11,21 @@ export class CartService {
 
   getItem(){
     return this.httpClient.get<any[]>(this.backendUrl)
+  }
 
+  postItem(value: cartMember){
+    return this.httpClient.post(this.backendUrl, value);
   }
 }
 
 export  interface cartMember {
-  cart_id: string;
   batch: string;
-  pn_description: string;
-  pn: string;
-  sn: string;
-  qty: string;
+  pn_description?: string;
+  pn?: string;
+  sn?: string;
+  qty?: string;
   aircraft: string;
-  bin: string;
+  bin?: string;
   engineer_id: string;
   engineer_name: string;
 }

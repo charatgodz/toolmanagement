@@ -9,13 +9,14 @@
             <th scope="col">Bin</th>
             <th scope="col">Qty</th>
             <th scope="col">Aircraft</th>
-            <th scope="col">Engineer</th>
+            <th scope="col">ENG ID</th>
+            <th scope="col">ENG Name</th>
             <th scope="col">Action</th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let item of cartItem">
-            <th scope="row">1</th>
+        <tr *ngFor="let item of cartItem ; index as i">
+            <th scope="row">{{ i+1 }}</th>
             <td>{{item.batch}}</td>
             <td>{{item.pn_description}}</td>
             <td>{{item.pn}}</td>
@@ -24,6 +25,7 @@
             <td>{{item.qty}}</td>
             <td>{{item.aircraft}}</td>
             <td>{{item.engineer_id}}</td>
+            <td>{{item.engineer_name}}</td>
             <td><a href="">Delete</a></td>
         </tr>
     </tbody>

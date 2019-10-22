@@ -23,6 +23,7 @@
                             <label for="engineername">Engineer Name</label>
                             <input type="text" name="engineer_name" readonly class="form-control-plaintext" id="engineername" value="Engineer Name" [(ngModel)]="model.engineer_name">
                         </div>
+
                     </div>
 
                     <div class="row">
@@ -40,7 +41,7 @@
                         </div>
                         <div class="col-6">
                             <label for="batch">Batch Number</label>
-                            <input type="text" name="batch" class="form-control" id="engineer" placeholder="Engineer ID" [(ngModel)]="model.batch" (keyup.enter)="batchEnter()">
+                            <input type="text" name="batch" class="form-control" id="batch" placeholder="Batch Number" [(ngModel)]="model.batch" (keyup.enter)="batchEnter()">
                         </div>
                     </div>
                     <br>
