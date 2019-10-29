@@ -13,40 +13,7 @@
 
             <div class="modal-body">
 
-                <form class="bg-light text-dark">
-                    <div class="row">
-                        <div class="col-6">
-                            <label for="engineer">Engineer ID</label>
-                            <input type="text" name="engineer_id" class="form-control" id="engineer" placeholder="Engineer ID" [(ngModel)]="model.engineer_id">
-                        </div>
-                        <div class="col-6">
-                            <label for="engineername">Engineer Name</label>
-                            <input type="text" name="engineer_name" readonly class="form-control-plaintext" id="engineername" value="Engineer Name" [(ngModel)]="model.engineer_name">
-                        </div>
 
-                    </div>
-
-                    <div class="row">
-                        <div class="col-6">
-                            <label for="exampleFormControlSelect1">Aircraft</label>
-                            <select class="form-control" id="exampleFormControlSelect1" name="aircraft" [(ngModel)]="model.aircraft">
-                                <option>--Please select Aircraft--</option>
-                                <option>Daily Service</option>
-                                <option>HS-LTP</option>
-                                <option>HS-LTQ</option>
-                                <option>HS-LTR</option>
-                                <option>HS-LTS</option>
-                                <option>HS-LTT</option>
-                            </select>
-                        </div>
-                        <div class="col-6">
-                            <label for="batch">Batch Number</label>
-                            <input type="text" name="batch" class="form-control" id="batch" placeholder="Batch Number" [(ngModel)]="model.batch" (keyup.enter)="batchEnter()">
-                        </div>
-                    </div>
-                    <br>
-
-                </form>
 
                 <h5>Tool Detail</h5>
 

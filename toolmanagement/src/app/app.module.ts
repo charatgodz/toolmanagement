@@ -10,6 +10,7 @@ import { CheckOutComponent } from './check-out/check-out.component';
 import { CheckInComponent } from './check-in/check-in.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CheckOutDetailComponent } from './check-out-detail/check-out-detail.component';
+import { CheckOutHeaderComponent } from './check-out-header/check-out-header.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { CheckOutDetailComponent } from './check-out-detail/check-out-detail.com
     CheckOutComponent,
     CheckInComponent,
     CheckOutDetailComponent,
+    CheckOutHeaderComponent,
     
   ],
   imports: [
