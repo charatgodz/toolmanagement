@@ -1,28 +1,32 @@
 <div class="modal fade" id="checkout-header-modal">
     <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title">Check-Out Header</h4>
-            </div>
-            <div class="modal-body">
+        <form class="bg-light text-dark">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Check-Out Header</h4>
+                </div>
+                <div class="modal-body">
 
-                <form class="bg-light text-dark">
-                    <div class="row">
+
+                    <div class="row form-group">
                         <div class="col-6">
                             <label for="engineer">Engineer ID</label>
-                            <input type="text" name="engineer_id" class="form-control" id="engineer" placeholder="Engineer ID" [(ngModel)]="model.engineer_id">
+                            <input type="text" name="engineer_id" class="form-control is-valid" id="engineer"
+                                placeholder="TL140XXX" [(ngModel)]="model.engineer_id" style="text-transform:uppercase">
                         </div>
                         <div class="col-6">
                             <label for="engineername">Engineer Name</label>
-                            <input type="text" name="engineer_name" readonly class="form-control-plaintext" id="engineername" value="Engineer Name" [(ngModel)]="model.engineer_name">
+                            <input type="text" name="engineer_name" readonly class="form-control-plaintext"
+                                id="engineername" value="Engineer Name" [(ngModel)]="model.engineer_name">
                         </div>
 
                     </div>
 
-                    <div class="row">
+                    <div class="row form-group">
                         <div class="col-6">
                             <label for="exampleFormControlSelect1">Aircraft</label>
-                            <select class="form-control" id="exampleFormControlSelect1" name="aircraft" [(ngModel)]="model.aircraft">
+                            <select class="form-control" id="exampleFormControlSelect1" name="aircraft"
+                                [(ngModel)]="model.aircraft">
                                 <option>--Please select Aircraft--</option>
                                 <option>Daily Service</option>
                                 <option>HS-LTP</option>
@@ -32,23 +36,22 @@
                                 <option>HS-LTT</option>
                             </select>
                         </div>
+                        <div class="col-6">
+                            <label for="flight">Flight</label>
+                            <input type="text" name="engineer_id" class="form-control loading" id="flight" placeholder="SL1XX"
+                                [(ngModel)]="model.engineer_id" style="text-transform:uppercase">
+                        </div>
                     </div>
+
                     <br>
-
-                </form>
-
-
-                <p>Modal 1</p>
-
-                <a href="#modal-2" data-toggle="modal" data-dismiss="modal">Next ></a>
-
-
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-dismiss="modal"
+                        data-target="#checkout-modal">Save changes</button>
+                </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-        </div>
+        </form>
         <!-- /.modal-content -->
     </div>
     <!-- /.modal-dialog -->

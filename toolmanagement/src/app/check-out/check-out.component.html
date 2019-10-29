@@ -1,4 +1,5 @@
-<div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+<div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel"
+    aria-hidden="true" id="checkout-modal">
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
 
@@ -12,10 +13,18 @@
 
 
             <div class="modal-body">
-
-
-
-                <h5>Tool Detail</h5>
+                <div class="row" style="padding-bottom: 10px">
+                    <form class="form-inline">
+                        <div class="form-group" style="margin-left: 20px">
+                            <label for="inputPassword6">Batch :</label>
+                            <input type="password" id="inputPassword6" class="form-control mx-sm-3"
+                                aria-describedby="passwordHelpInline">
+                            <small id="passwordHelpInline" class="text-muted">
+                                Must be Batch Number.
+                            </small>
+                        </div>
+                    </form>
+                </div>
 
                 <check-out-detail></check-out-detail>
 
