@@ -13,7 +13,7 @@
                             <label for="engineer">Engineer ID</label>
                             <input type="text" class="form-control" id="engineer" placeholder="TL140XXX"
                                 style="text-transform:uppercase" formControlName="engineer_id"
-                                [class.is-valid]="form.get('engineer_id').valid">
+                                [ngClass]="(form.get('engineer_id').valid)?'is-valid':'is-invalid'">
                         </div>
                         <div class="col-6">
                             <label for="engineername">Engineer Name</label>
