@@ -4,13 +4,14 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoanComponent } from './loan/loan.component';
-import { TopbarComponent } from './topbar/topbar.component';
-import { CheckOutComponent } from './check-out/check-out.component';
-import { CheckInComponent } from './check-in/check-in.component';
+import { LoanComponent } from './components/loan/loan.component';
+import { TopbarComponent } from './components/topbar/topbar.component';
+import { CheckOutComponent } from './components/check-out/check-out.component';
+import { CheckInComponent } from './components/check-in/check-in.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CheckOutDetailComponent } from './check-out-detail/check-out-detail.component';
-import { CheckOutHeaderComponent } from './check-out-header/check-out-header.component';
+import { CheckOutDetailComponent } from './components/check-out-detail/check-out-detail.component';
+import { CheckOutHeaderComponent } from './components/check-out-header/check-out-header.component';
+import { ValidateDirective } from './directives/validate.directive';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { CheckOutHeaderComponent } from './check-out-header/check-out-header.com
     CheckInComponent,
     CheckOutDetailComponent,
     CheckOutHeaderComponent,
+    ValidateDirective,
     
   ],
   imports: [

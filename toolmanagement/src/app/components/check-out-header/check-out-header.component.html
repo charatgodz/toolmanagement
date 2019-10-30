@@ -11,11 +11,15 @@
                     <div class="row form-group">
                         <div class="col-6">
                             <label for="engineer">Engineer ID</label>
-                            <input type="text" class="form-control is-valid" id="engineer" placeholder="TL140XXX" style="text-transform:uppercase" formControlName="engineer_id">
+                            <input type="text" class="form-control" id="engineer" placeholder="TL140XXX"
+                                style="text-transform:uppercase" formControlName="engineer_id"
+                                [class.is-valid]="form.get('engineer_id').valid"
+                                >
                         </div>
                         <div class="col-6">
                             <label for="engineername">Engineer Name</label>
-                            <input type="text" readonly class="form-control-plaintext" id="engineername" value="Engineer Name">
+                            <input type="text" readonly class="form-control-plaintext" id="engineername"
+                                value="Engineer Name">
                         </div>
 
                     </div>
@@ -35,7 +39,8 @@
                         </div>
                         <div class="col-6">
                             <label for="flight">Flight</label>
-                            <input type="text" class="form-control loading" id="flight" placeholder="SL1XX" formControlName="flight" style="text-transform:uppercase">
+                            <input type="text" class="form-control loading" id="flight" placeholder="SL1XX"
+                                formControlName="flight" style="text-transform:uppercase">
                         </div>
                     </div>
 

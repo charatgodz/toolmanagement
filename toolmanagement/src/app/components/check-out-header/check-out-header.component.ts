@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
-import { CheckoutService } from '../service/checkout.service';
+import { CheckoutService } from '../../service/checkout.service';
 
 
 @Component({
@@ -20,7 +20,7 @@ export class CheckOutHeaderComponent implements OnInit {
   
   private createForm(){
     this.form = this.fb.group({ 
-      engineer_id: [],
+      engineer_id: ['',Validators.required],
       store_id: ['TL140802'],
       aircraft: [],
       flight: []
@@ -28,14 +28,17 @@ export class CheckOutHeaderComponent implements OnInit {
   }
 
   onSubmit(){
-    if(this.form.invalid) return;
+
+    console.log(this.form.value)
+    console.log(this.form.get('engineer_id').valid)
+    /* if(this.form.invalid) return;
     this.chekcoutheader
     .postCheckoutheader(this.form.value)
     .subscribe(result =>{
       console.log(result);
     },
     excep => alert(excep.error.message)
-    );
+    ); */
   }
   
   ngOnInit() {
