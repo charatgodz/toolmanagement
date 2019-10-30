@@ -1,4 +1,4 @@
 <?php
 
-$routes['/api/cart']['GET'] = './cart/get.php';
-$routes['/api/cart']['POST'] = './cart/post.php';
+$routes['/api/checkout']['GET'] = './checkout/get.php';
+$routes['/api/checkout']['POST'] = './checkout/post.php';

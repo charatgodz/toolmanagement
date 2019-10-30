@@ -3,32 +3,37 @@
 $data = json_decode(file_get_contents('php://input'));
 
 # ตรวจสอบ Validation
-if(isset($data->batch) && isset($data->aircraft) && isset($data->engineer_id)) 
+if(isset($data->engineer_id) && isset($data->store_id) && isset($data->aircraft) && isset($data->flight)) 
 {
     # ตรวจสอบค่าว่าง
-    if(empty($data->batch)) 
+    if(empty($data->engineer_id)) 
     {
         http_response_code(400);
-        exit(json_encode(['message' => 'batch is required']));
+        exit(json_encode(['message' => 'batch is engineer_id']));
+    }
+    elseif(empty($data->store_id)) 
+    {
+        http_response_code(400);
+        exit(json_encode(['message' => 'aircraft is store_id']));
     }
     elseif(empty($data->aircraft)) 
     {
         http_response_code(400);
-        exit(json_encode(['message' => 'aircraft is required']));
+        exit(json_encode(['message' => 'engineer_id is aircraft']));
     }
-    elseif(empty($data->engineer_id)) 
+    elseif(empty($data->flight)) 
     {
         http_response_code(400);
-        exit(json_encode(['message' => 'engineer_id is required']));
+        exit(json_encode(['message' => 'engineer_id is flight']));
     }
 
-    $query  = 'INSERT INTO cart_tb(batch, pn_description, pn, sn, qty, bin, aircraft, engineer_id) VALUES(?, ?, ?, ?)';
+    $query  = 'INSERT INTO borrow_header(engineer_id, store_id, aircraft, flight) VALUES(?, ?, ?, ?)';
     $stmt   = mysqli_prepare($database, $query);
     mysqli_stmt_bind_param($stmt, 'ssss', 
-        $data->mem_name,
-        $data->mem_email,
-        $data->mem_address,
-        $data->mem_phone
+        $data->engineer_id,
+        $data->store_id,
+        $data->aircraft,
+        $data->flight
     );
     mysqli_stmt_execute($stmt);
     $error_message = mysqli_error($database);
