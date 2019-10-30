@@ -1,6 +1,6 @@
 <div class="modal fade" id="checkout-header-modal">
     <div class="modal-dialog">
-        <form class="bg-light text-dark" (submit)="onSubmit()" [formGroup]="form">
+        <form class="bg-light text-dark" (submit)="onSubmit()" [formGroup]="form" autocomplete="off">
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">Check-Out Header</h4>
@@ -13,8 +13,7 @@
                             <label for="engineer">Engineer ID</label>
                             <input type="text" class="form-control" id="engineer" placeholder="TL140XXX"
                                 style="text-transform:uppercase" formControlName="engineer_id"
-                                [class.is-valid]="form.get('engineer_id').valid"
-                                >
+                                [class.is-valid]="form.get('engineer_id').valid">
                         </div>
                         <div class="col-6">
                             <label for="engineername">Engineer Name</label>
