@@ -11,14 +11,14 @@
                     <div class="row form-group">
                         <div class="col-6">
                             <label for="engineer">Engineer ID</label>
-                            <input type="text" class="form-control" id="engineer" placeholder="TL140XXX"
-                                style="text-transform:uppercase" formControlName="engineer_id"
-                                [ngClass]="(form.get('engineer_id').valid)?'is-valid':'is-invalid'">
+                            <input type="text" class="form-control uppercase" id="engineer" placeholder="TL140XXX" formControlName="engineer_id" [ngClass]="{
+                                'is-valid': form.get('engineer_id').touched && form.get('engineer_id').valid,
+                                'is-invalid': form.get('engineer_id').touched && form.get('engineer_id').invalid
+                            }">
                         </div>
                         <div class="col-6">
                             <label for="engineername">Engineer Name</label>
-                            <input type="text" readonly class="form-control-plaintext" id="engineername"
-                                value="Engineer Name">
+                            <input type="text" readonly class="form-control-plaintext" id="engineername" value="Engineer Name">
                         </div>
 
                     </div>
@@ -26,8 +26,11 @@
                     <div class="row form-group">
                         <div class="col-6">
                             <label for="exampleFormControlSelect1">Aircraft</label>
-                            <select class="form-control" id="exampleFormControlSelect1" formControlName="aircraft">
-                                <option>--Please select Aircraft--</option>
+                            <select class="form-control" id="exampleFormControlSelect1" formControlName="aircraft" [ngClass]="{
+                                'is-valid': form.get('aircraft').touched && form.get('aircraft').valid,
+                                'is-invalid': form.get('aircraft').touched && form.get('aircraft').invalid
+                            }">
+                                <option value="">--Select Aircraft--</option>
                                 <option>Daily Service</option>
                                 <option>HS-LTP</option>
                                 <option>HS-LTQ</option>
@@ -38,8 +41,7 @@
                         </div>
                         <div class="col-6">
                             <label for="flight">Flight</label>
-                            <input type="text" class="form-control loading" id="flight" placeholder="SL1XX"
-                                formControlName="flight" style="text-transform:uppercase">
+                            <input type="text" class="form-control loading" id="flight" placeholder="SL1XX" formControlName="flight" style="text-transform:uppercase">
                         </div>
                     </div>
 
@@ -47,7 +49,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary" data-toggle="modal">Save changes</button>
+                    <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#checkout-modal">Save changes</button>
                 </div>
             </div>
         </form>

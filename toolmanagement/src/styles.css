@@ -237,3 +237,7 @@ body {
 .table-title .add-new i {
     margin-right: 4px;
 }
+
+.uppercase {
+    text-transform: uppercase;
+}

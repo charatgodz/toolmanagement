@@ -4,3 +4,8 @@ export interface borrow_header {
     aircraft: string;
     flight: string;
 }
+
+export interface borrow_id{
+    message: string;
+    borrow_id: number;
+}
